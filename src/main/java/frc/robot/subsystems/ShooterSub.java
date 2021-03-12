@@ -6,11 +6,11 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.*;
 
-//import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 
-//import com.ctre.phoenix.motorcontrol.TalonFXInvertType;
+import com.ctre.phoenix.motorcontrol.TalonFXInvertType;
 
-//import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj.Encoder;
 
@@ -21,10 +21,10 @@ import static frc.robot.Constants.*;
 
 public class ShooterSub extends SubsystemBase {
   /** Creates a new ShooterSub. */
-  //private final TalonFX upperMotor = new TalonFX(k_upperMotor);
-  //private final TalonFX lowerMotor = new TalonFX(k_lowerMotor);
-  private final WPI_TalonSRX upperMotor = new WPI_TalonSRX(k_upperMotor);
-  private final WPI_TalonSRX lowerMotor = new WPI_TalonSRX(k_lowerMotor);
+  private final TalonFX upperMotor = new TalonFX(k_upperMotor);
+  private final TalonFX lowerMotor = new TalonFX(k_lowerMotor);
+  //private final WPI_TalonSRX upperMotor = new WPI_TalonSRX(k_upperMotor);
+  //private final WPI_TalonSRX lowerMotor = new WPI_TalonSRX(k_lowerMotor);
   private final WPI_TalonSRX positionMotor = new WPI_TalonSRX(k_positionMotor);
   private final WPI_TalonSRX feedMotor = new WPI_TalonSRX(k_feedMotor);
   private final Encoder m_encoder = new Encoder(k_encoderDIO_1, k_encoderDIO_2);
@@ -60,18 +60,18 @@ public class ShooterSub extends SubsystemBase {
 
   // turns on the upper and lower motor of shooter
   public void shooterMotorOn() {
-    //upperMotor.set(ControlMode.PercentOutput, 1.0);
-    //lowerMotor.set(ControlMode.PercentOutput,-1.0);
-    upperMotor.set(1.0);
-    lowerMotor.set(-1.0);
+    upperMotor.set(ControlMode.PercentOutput, 1.0);
+    lowerMotor.set(ControlMode.PercentOutput,-1.0);
+    //upperMotor.set(1.0);
+    //lowerMotor.set(-1.0);
   }
 
   // turns off the upper and lower motor of the shooter
   public void shooterMotorOff() {
-    //upperMotor.set(ControlMode.PercentOutput, 0.0);
-    //lowerMotor.set(ControlMode.PercentOutput, 0.0);
-    upperMotor.stopMotor();
-    lowerMotor.stopMotor();
+    upperMotor.set(ControlMode.PercentOutput, 0.0);
+    lowerMotor.set(ControlMode.PercentOutput, 0.0);
+    //upperMotor.stopMotor();
+    //lowerMotor.stopMotor();
   }
 
   // turns on feeder motor
@@ -96,10 +96,10 @@ public class ShooterSub extends SubsystemBase {
 
   // turns all motors off
   public void allOff() {
-    //upperMotor.set(ControlMode.PercentOutput, 0.0);
-    //lowerMotor.set(ControlMode.PercentOutput, 0.0);
-    upperMotor.stopMotor();
-    lowerMotor.stopMotor();
+    upperMotor.set(ControlMode.PercentOutput, 0.0);
+    lowerMotor.set(ControlMode.PercentOutput, 0.0);
+    //upperMotor.stopMotor();
+    //lowerMotor.stopMotor();
     feedMotor.stopMotor();
     positionMotor.stopMotor();
   }

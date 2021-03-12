@@ -45,7 +45,6 @@ public class ShooterSub extends SubsystemBase {
   //final NeutralMode kBrakeDurNeutral = NeutralMode.Brake;
 
   public ShooterSub() {
-    int i = 0;
     m_encoder.setDistancePerPulse(20);
     m_encoder.setMinRate(50);
     m_encoder.reset();

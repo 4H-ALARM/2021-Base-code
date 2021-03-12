@@ -2,6 +2,8 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+// test comment
+
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.*;
@@ -43,6 +45,7 @@ public class ShooterSub extends SubsystemBase {
   //final NeutralMode kBrakeDurNeutral = NeutralMode.Brake;
 
   public ShooterSub() {
+    int i = 0;
     m_encoder.setDistancePerPulse(20);
     m_encoder.setMinRate(50);
     m_encoder.reset();

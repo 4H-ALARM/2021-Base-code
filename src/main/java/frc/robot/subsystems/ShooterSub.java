@@ -23,8 +23,8 @@ import static frc.robot.Constants.*;
 
 public class ShooterSub extends SubsystemBase {
   /** Creates a new ShooterSub. */
-  private final TalonFX upperMotor = new TalonFX(k_upperMotor);
-  private final TalonFX lowerMotor = new TalonFX(k_lowerMotor);
+  private final WPI_TalonFX upperMotor = new WPI_TalonFX(k_upperMotor);
+  private final WPI_TalonFX lowerMotor = new WPI_TalonFX(k_lowerMotor);
   //private final WPI_TalonSRX upperMotor = new WPI_TalonSRX(k_upperMotor);
   //private final WPI_TalonSRX lowerMotor = new WPI_TalonSRX(k_lowerMotor);
   private final WPI_TalonSRX positionMotor = new WPI_TalonSRX(k_positionMotor);

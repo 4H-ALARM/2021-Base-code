@@ -39,7 +39,7 @@ public final class Constants {
     public final static double k_kP = 0.005;
     public final static double k_AngleSetPoint = 0.0;
     // Talon FX control mode velocity
-    //public final static int k_UnitsPerRevolution = 2048;
+    public final static int k_UnitsPerRevolution = 2048;
 
 
 }

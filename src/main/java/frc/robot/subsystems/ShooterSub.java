@@ -31,23 +31,32 @@ public class ShooterSub extends SubsystemBase {
   private final WPI_TalonSRX feedMotor = new WPI_TalonSRX(k_feedMotor);
   private final Encoder m_encoder = new Encoder(k_encoderDIO_1, k_encoderDIO_2);
  
-  /*
+  
   final int UnitsPerRevolution = k_UnitsPerRevolution; /* this is constant for Talon FX */
 
 	/**
 	 * Decide if positive motor-output/sensor-velocity should be when motor spins
 	 * clockwise or counter-clockwise.
 	 */
-  /*
+  
 	final TalonFXInvertType kInvertType = TalonFXInvertType.CounterClockwise; // <<< What direction you want "forward/up" to be.
 
 	/** electic brake during neutral */
-  //final NeutralMode kBrakeDurNeutral = NeutralMode.Brake;
+  final NeutralMode kBrakeDurNeutral = NeutralMode.Brake;
 
   public ShooterSub() {
     m_encoder.setDistancePerPulse(20);
     m_encoder.setMinRate(50);
     m_encoder.reset();
+
+    // initiaize the talon fx
+    /* newer config API */
+			TalonFXConfiguration configs = new TalonFXConfiguration();
+			/* select integ-sensor for PID0 (it doesn't matter if PID is actually used) */
+			//configs.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+			/* config all the settings */
+      upperMotor.configAllSettings(configs);
+      lowerMotor.configAllSettings(configs);
   }
 
   @Override
